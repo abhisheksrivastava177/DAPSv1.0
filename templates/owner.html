@@ -1,0 +1,26 @@
+<!doctype html>
+
+<html>
+	<head>
+		<title>Welcome</title>
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/owner.css') }}">
+	</head>
+
+	<body>
+		<h1 id="welcome">ITC Sonar, Kolkata</h1>
+		<h2 id="branding">Powered by DAPS v1.0</h2>	
+		<h1 id = "Name">Welcome {{ name }}</h1>
+		<div>
+			<a href="http://localhost:5000/" id = "logout">Log out</a>
+		</div>
+		<h3>{{ msg }}</h3>
+		<ul>
+			<li><a href="{{ url_for('add') }}">Add Room/Hall/Auditorium</a></li>
+			<li><a href="{{ url_for('allTables')}}">Check Room/Hall/Auditorium Status</a></li>
+			<li><a href="{{ url_for('checkBookings')}}">View Active Bookings</a></li>
+			<li><a href="{{ url_for('cleanRooms')}}">Pending Room Cleanings</a></li>
+			<li><a href="{{ url_for('loadPolicyPage')}}">Update Policies</a></li>
+		</ul>
+		
+	</body>
+</html>

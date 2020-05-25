@@ -1,0 +1,63 @@
+html {
+    background-image:  url('/static/img/bg.png');
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-color: #6699CC;
+}
+
+#welcome {
+    font-size: 50px;
+    text-align: center;
+    margin-top: 2%;
+    margin-bottom: 0%;
+    color: #FFFFFF;
+    text-shadow: 5px 5px #000000;
+}
+
+#branding {
+    font-size: 25px;
+    text-align: center;
+    margin-left: 10%;
+    margin-top: 0;
+    color: #FFFFFF;
+    text-shadow: 4px 4px #000000;
+}
+
+#info {
+    margin-top: 5%;
+    font-size: 35px;
+    text-align: center;
+    color: #FFFFFF;
+    text-shadow: 2px 2px #000000;
+}
+
+div.form {
+    display: block;
+    text-align: center;
+    margin: 2% 30%; 
+    padding: 2% 2%; 
+}
+
+#button { 
+    border-radius:5px;  
+    padding: 1%; 
+    color: #ffffff;
+    background-color: rgba(0,0,0,0.2);
+    font-weight:bold; 
+    margin: 2%;
+    font-size:20px;
+}
+
+#button:hover {
+    color: #ffffff;
+    background-color: rgba(0,0,0,.3);
+}
+
+#pol {
+    font-size: 20px;
+    text-align: center;
+    color: #FFFFFF;
+    text-shadow: 1px 1px #000000;
+}

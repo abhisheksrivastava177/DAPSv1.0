@@ -1,0 +1,65 @@
+html {
+	background-image:  url('/static/img/bg.png');
+	-webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size:cover ;
+    background-size:cover ;
+	background-color: #6699CC;
+}
+
+ul {
+	margin: 2% 0;
+	list-style-type: none;
+	padding-left: 0;
+}
+
+li {
+	margin: auto;
+	padding: 1% 0;
+	text-align: center;
+}
+
+a {
+	margin: 0 10%;
+	font-size: 50px;
+	text-decoration: none; 
+	color:#FFFFFF;
+	text-shadow: 2px 2px #000000;
+}
+
+a:hover {
+	font-size: 70px;
+}
+
+#welcome {
+	font-size: 100px;
+	text-align: center;
+	margin-top: 2%;
+	margin-bottom: 0%;
+	color: #FFFFFF;
+	text-shadow: 5px 5px #000000;
+}
+
+#branding {
+	font-size: 50px;
+	text-align: center;
+	margin-left: 45%;
+	margin-top: 0;
+	color: #FFFFFF;
+	text-shadow: 4px 4px #000000;
+}
+
+h3 {
+	text-align:center;
+	color:#ffffff;
+	font-size:25px;
+	font-style: italic;
+}
+
+h3 {
+	animation: blinker 1.5s linear infinite;
+}
+
+@keyframes blinker {
+	50% { opacity: 0; }
+}

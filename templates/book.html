@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Book</title>
+     <link rel="stylesheet" href="{{ url_for('static', filename='css/book.css') }}">
+</head>
+<body>
+
+	<h1 id="welcome">ITC Sonar, Kolkata</h1>
+    <h2 id="branding">Powered by DAPS v1.0</h2>
+	<h2 id = "info">Currently we have {{ rooms }} rooms, {{ halls }} halls and {{ audi }} auditoriums</h2>
+
+	<h3>Select your booking preferences:</h3>
+	<div class = "form">
+		<form method = "POST" action = "{{ url_for('addEntries') }}">
+			<input type="radio" id="Room" name="type" value="room">
+			<label for="room">Room</label>
+			<input type="radio" id="Hall" name="type" value="hall">
+			<label for="hall">Hall</label>
+			<input type="radio" id="Auditorium" name="type" value="audi">
+			<label for="audi">Auditorium</label>
+			<br>
+			<label for="num" id = "number">Number of Rooms/Halls/Auditoriums needed:</label>
+	  		<input type="text" id="num" name="num" rows = "1" cols="2">
+	  		<br>
+	  		<label for="start">From:</label>
+	  		<input type="date" id="start" name="start">
+	  		<label for="finish">To:</label>
+	  		<input type="date" id="finish" name="finish">
+	  		<br>
+			<input id="button" type="submit" name="submit" value="Book"> 
+		</form>
+	</div>
+	<h2 id = "message">{{ msg }}</h2>
+	<a href="{{ url_for('customer')}}"><p id = "href">Back</p></a>
+
+</body>
+</html>
+

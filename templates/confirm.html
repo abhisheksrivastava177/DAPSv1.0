@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Confirm</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/confirm.css') }}">
+</head>
+<body>
+	<h1 id="welcome">ITC Sonar, Kolkata</h1>
+    <h2 id="branding">Powered by DAPS v1.0</h2> 
+	<h2 id = "info">{{msg}}</h2>
+	<div class = "form">
+	{% if type == 4 %}
+	<form method = "POST" action = "{{ url_for('pay')}}">
+	{% elif type == 3 %}
+	<h2 id = "pol">{{ pol }}</h2>	
+	<form method = "POST" action = "{{ url_for('change')}}">
+	{% elif type == 2 %}
+	<h2 id = "pol">{{ pol }}</h2>	
+	<form method = "POST" action = "{{ url_for('remove')}}">
+	{% else %}
+	<form method = "POST" action = "{{ url_for('confirm')}}">
+	{% endif %}
+		<input id="button" type="submit" name="submit" value="Confirm">
+		<input id="button" type="submit" name="submit" value="Cancel">  
+	</form>
+	</div>
+</body>
+</html>

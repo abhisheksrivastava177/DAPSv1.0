@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Update Policy</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/selectPolicy.css') }}">
+	</head>
+
+	<body>
+		<h1 id="welcome">ITC Sonar, Kolkata</h1>
+      <h2 id="branding">Powered by DAPS v1.0</h2> 
+		<h1 id = "info">Select Policy to update</h1>
+		<div class= "form">
+			<form method = "POST" action = "{{ url_for('policyUpdate')}}">
+				<input id = "button" type = "submit" name = "submit" value = "Cancellation Policy">
+				<input id = "button" type = "submit" name = "submit" value = "Reschedule Policy">
+			</form>	
+		</div>
+		
+      <a href="{{ url_for('owner')}}"><p id = "href">Back</p></a>
+	</body>
+</html>

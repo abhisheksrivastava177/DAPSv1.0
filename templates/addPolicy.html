@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Update Policy</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/addPolicy.css') }}">
+</head>
+
+<body>
+	<h1 id="welcome">ITC Sonar, Kolkata</h1>
+    <h2 id="branding">Powered by DAPS v1.0</h2> 
+	
+	{%if pol == 0%}
+	<h1 id = "info">Input Cancellation policy to update</h1>
+	{%else%}
+	<h1 id = "info">Input Reschedule policy to update</h1>
+	{%endif%}
+	{% if pol == 0 %}
+	<div class = "form">
+		<form method = "POST" action = "{{ url_for('updateDB')}}">
+			
+			<label for="policy">Input Policy here:</label><br>
+			<textarea name="policy" id = "policy" rows="30" cols="100"></textarea>
+			<br>
+			<input type="submit" id ="button" name="submit" value="Update Cancellation Policy">
+	</form>
+	</div>
+	{% else %}
+	<div class = "form">
+	<form method = "POST" action = "{{ url_for('updateDB')}}">
+		
+		<label for="lname">Input Policy here:</label><br>
+		<textarea name="policy" id = "policy" rows="30" cols="100"></textarea>
+		<br>
+		<input type="submit" id ="button" name="submit" value="Update Reschedule Policy">
+	</form>
+	</div>
+	{%endif%}
+	
+	<a href="{{ url_for('loadPolicyPage')}}"><p id = "href">Back</p></a></p>
+</body>
+</html>

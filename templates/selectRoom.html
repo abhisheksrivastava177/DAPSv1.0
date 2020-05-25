@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+   <head>
+      <title>Cancel</title>
+      <link rel="stylesheet" href="{{ url_for('static', filename='css/selectRoom.css') }}">
+   </head>
+   
+   <body>
+      <h1 id="welcome">ITC Sonar, Kolkata</h1>
+      <h2 id="branding">Powered by DAPS v1.0</h2> 
+      {% if msg == null or msg == "" %}
+      <h1 id = "info">You have the following Rooms/Halls/Auditoriums. Choose to view booking status</h1>
+      <form method = "POST" action = "{{ url_for('getStatus') }}">
+      <table id = "data">
+         
+      {% for row in rows %}
+         <tr>
+            <td><input type="radio" id="Room" name="choice" value={{ row["id"] }}></td>
+            <td>{{row["name"]}}</td>
+         </tr>
+      {% endfor %} 
+      </table>
+      <div class = "form">
+         <input id = "button" type = "submit" name = "submit" value = "submit">
+      </div>
+      </form>
+      {% else %}
+      <h2 id="message">{{ msg }}</h2>
+      {% endif %}
+      <a href="{{ url_for('owner')}}"><p id = "href">Back</p></a>
+   </body> 
+</html>

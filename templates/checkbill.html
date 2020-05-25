@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+      <title>Bill</title>
+      <link rel="stylesheet" href="{{ url_for('static', filename='css/checkbill.css') }}">
+   </head>
+   <body>
+      <h1 id="welcome">ITC Sonar, Kolkata</h1>
+      <h2 id="branding">Powered by DAPS v1.0</h2>
+      {% if msg == null or msg == "" %}
+      <h1 id = "info">You have the following bookings currently. Choose to pay</h1>
+      <form method = "POST" action = "{{ url_for('billconf')}}">
+      <table id = "data">
+         <thead>
+            <td>Select</td>
+            <td>Booked by</td>
+            <td>Type</td>
+            <td>Number</td>
+            <td>From</td>
+            <td>To</td>
+         </thead>
+         
+         {% for row in rows %}
+         
+            <tr>
+               <td><input type="radio" id="Room" name="choice" value={{ row["id"] }}></td>
+               <td>{{row["name"]}}</td>
+               <td>{{row["type"]}}</td>
+               <td>{{row["num"]}}</td>
+               <td>{{row["start"]}}</td>
+               <td>{{row["finish"]}}</td>
+            </tr>
+         {% endfor %} 
+      </table>
+      <div class = "form">
+         <input id = "button" type = "submit" name = "submit" value = "Pay">
+      </div>
+      </form>
+      {% endif %}
+      <h2 id="message">{{ msg }}</h2>
+      <a href="{{ url_for('customer')}}"><p id = "href">Back</p>
+   </body> 
+</html>

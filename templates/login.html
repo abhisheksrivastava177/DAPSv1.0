@@ -1,0 +1,30 @@
+<!DOCTYPE HTML> 
+	<html> 
+		<head> 
+			<title>Sign-In</title> 
+			<link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+		</head> 
+		<body >
+			<div> 
+				{% if usertype == "owner" %}
+					<legend>Owner Login</legend> 
+				{% else %}
+					<legend>Customer Login</legend> 
+				{% endif %}
+				<form method="POST" action="{{ url_for('findrec') }}"> 
+					
+					<input type="text" name="username" size="40" placeholder= "Username">
+					<br>
+					<input type="password" name="pass" size="40" placeholder= "Password">
+					<br>
+					{% if usertype == "owner" %}
+						<input id="button" type="submit" name="submit" value="Log-In">
+					{% else %}
+						<input id="button" type="submit" name="submit" value="Log In"> 
+					{% endif %}
+				</form> 
+				<p id="msg">{{msg}}</p>
+				<a href="{{url_for('home')}}"><p id = "href">Return to Home Page</p></a>		
+			</div> 
+		</body> 
+	</html>

@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+
+   <head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/toClean.css') }}">
+
+   </head>
+   <body>
+      <h1 id="welcome">ITC Sonar, Kolkata</h1>
+      <h2 id="branding">Powered by DAPS v1.0</h2> 
+      {% if msg == null or msg == "" %}
+      <h1 id= "info">Current Active Bookings are as follows</h1>
+      <table id = "data">
+         <thead>
+            <td>Type</td>
+            <td>Number of Bookings</td>
+            <td>From</td>
+            <td>To</td>
+         </thead>
+         
+         {% for row in rows %}
+            <tr>
+               <td>{{ row["type"]}}</td>
+               <td>{{ row["num"]}}</td>
+               <td>{{ row["start"]}}</td>
+               <td>{{ row["finish"]}}</td>
+            </tr>
+         {% endfor %} 
+      </table>
+      <a href = "{{ url_for('finishCleaning')}}" id = "cleanall"><input id = "button" type = "submit" name = "submit" value = "Clean All"></a>
+      {% endif %}
+      <h2 id = "message">{{ msg }}</h2>
+      <a href="{{ url_for('owner')}}"><p id = "href">Back</p></a>
+   </body> 
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Add</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/add.css') }}">
+</head>
+<body>
+	<h1 id="welcome">ITC Sonar, Kolkata</h1>
+    <h2 id="branding">Powered by DAPS v1.0</h2>
+	<h2 id = "info">Currently you have {{ rooms }} rooms, {{ halls }} halls and {{ audi }} auditoriums</h2>
+
+	<h3>Select any of the following to add:</h3>
+	<div class = "form">
+		<form method = "POST" action = "{{ url_for('addTables') }}">
+			<input type="radio" id="Room" name="type" value="room">
+			<label for="room">Room</label>
+			<input type="radio" id="Hall" name="type" value="hall">
+			<label for="hall">Hall</label>
+			<input type="radio" id="Auditorium" name="type" value="audi">
+			<label for="audi">Auditorium</label>
+			<p>
+				<label>Select number</label>
+				<select id = "myList" name = "num">
+				<option value = "1">1</option>
+				<option value = "2">2</option>
+				<option value = "3">3</option>
+				<option value = "4">4</option>
+				<option value = "5">5</option>
+				<option value = "6">6</option>
+				<option value = "7">7</option>
+				<option value = "8">8</option>
+				<option value = "9">9</option>
+				</select>
+			</p>
+			<input id="button" type="submit" name="submit" value="Add"> 
+		</form>
+	</div>
+	<a href="{{ url_for('owner')}}"><p id = "href">Back</p></a>
+
+</body>
+</html>
